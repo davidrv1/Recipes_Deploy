@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+    <h1 class="title">Welcome, {{current_user.first_name}} </h1>
+    <div class="viewRecipe">
+    <form action="", method = "POST">
+            <!-- <div>
+                <select name="dojo_id">
+                    {% for i in dojos %}
+                    <option value="{{i.id}}">{{i.name}}</option>
+                    {% endfor %}
+                </select>
+            </div> -->
+            <div>
+                <label for="name">Name: </label>
+            </div>
+            <p>{{recipe.name}}</p>
+            <!-- created by: {{recipe.creator.first_name}} -->
+            <div>
+                <label for="description">Description:</label>
+            </div>
+            <p>{{recipe.description}}</p>
+            <div>
+                <label for="instructions">Instructions:</label>
+            </div>
+            <p>{{recipe.instructions}}</p>
+            <div>
+                <div>
+                    <label for="date_cooked">Date Cooked/Made</label>
+                </div>
+                <p>{{recipe.date_made}}</p>
+                <div>
+                    <label for="duration">Under 30 minutes?</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <a href="/home">back to recipes</a>
+    <a href="/logout">logout</a>
+</body>
+</html>

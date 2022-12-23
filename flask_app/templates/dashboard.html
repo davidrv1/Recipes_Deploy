@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+    <div class="logout">
+            <a href="/create", method = 'post'>+Create</a> 
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="dashboard_container">
+        <header>
+            <h2 class="subHead">Welcome, {{current_user.first_name}}</h2>
+        </header>
+        <div id="displayTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Under 30 Minutes?</th>
+                        <th>Posted By</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in recipes %}
+                    <tr>
+                        <td class="tableData" name="name">{{i.name}}</td>
+                        <td class="tableData">
+                        {% if i.under_30 == 1 %}
+                        Yes
+                        {% else %}
+                        No
+                        {% endif %}</td>
+                        <td class="tableData">{{i.creator.first_name}}</td>
+                        <td class="tableData"><a href="/view/recipe/{{i.id}}"> View Recipe </a>
+                        {% if i.creator.id == current_user.id %}
+                            |<a href="/edit/{{i.id}}"> Edit </a>|<a href="/delete/{{i.id}}"> Delete </a>
+                        {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

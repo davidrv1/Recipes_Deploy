@@ -1,0 +1,76 @@
+.main_container{
+    /* border: solid black 1px; */
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    margin: auto;
+}
+.regTitle, .logTitle{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.registration, .login{
+    border: solid black 1px;
+    width: 300px;
+}
+.labelname, .inputname{
+    margin: 0px;
+    padding: 0px;
+    margin-left: 5px;
+}
+.inputname{
+    width: 285px;
+    height: 20px;
+}
+.logBtn, .regBtn{
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 25px;
+}
+/* ----------------------- */
+.dashboard_container{
+    /* border: solid black 1px; */
+}
+.logout{
+    /* border: solid black 1px; */
+    width: 200px;
+    margin-left: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
+table{
+    margin: auto;
+    width: 1000px;
+}
+th, td{
+    border: solid black 1px;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+td{
+    text-align: center;
+}
+.left_half,.right_half{
+    /* border: solid black 1px; */
+    width: 300px;
+    margin-top: 10px;
+}
+.addcontainer{
+    display: flex;
+    /* border: solid black 1px; */
+}
+.subBtn{
+    margin-top: 5px;
+}
+.home_logout{
+    margin-left: 1000px;
+}
+/* ------ */
+.edit_container{
+    border: solid black 1px;
+}
+
+.viewRecipe{
+    border: solid black 1px;
+}
